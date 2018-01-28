@@ -111,7 +111,7 @@ func main() {
 	r.HandleFunc("/cluster", UpdateClusterEndPoint).Methods("PUT")
 	r.HandleFunc("/cluster", DeleteClusterEndPoint).Methods("DELETE")
 	r.HandleFunc("/cluster/{id}", FindClusterEndpoint).Methods("GET")
-	if err := http.ListenAndServe(":3000", r); err != nil {
+	if err := http.ListenAndServe(":8080", r); err != nil {
 		log.Fatal(err)
 	}
 }
