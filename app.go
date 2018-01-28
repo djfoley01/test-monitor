@@ -40,7 +40,7 @@ func FindClusterEndpoint(w http.ResponseWriter, r *http.Request) {
 // POST a new cluster
 func CreateClusterEndPoint(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
-	var Cluster Cluster
+	var cluster Cluster
 	if err := json.NewDecoder(r.Body).Decode(&cluster); err != nil {
 		respondWithError(w, http.StatusBadRequest, "Invalid request payload")
 		return
