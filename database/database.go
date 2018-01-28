@@ -37,7 +37,7 @@ func (m *CDatabase) FindAll() ([]Cluster, error) {
 
 // Find a cluster by its id
 func (m *CDatabase) FindById(id string) (Cluster, error) {
-	var cluster Clusters
+	var cluster Cluster
 	err := db.C(COLLECTION).FindId(bson.ObjectIdHex(id)).One(&cluster)
 	return cluster, err
 }
